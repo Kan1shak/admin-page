@@ -20,6 +20,7 @@ h1,h2,h3,h4 {
 .main-container {
     display:grid;
     grid-template-columns: 1fr 4fr;
+    min-height: 100vh;
 }
 
 .sidebar {
@@ -74,6 +75,11 @@ h1,h2,h3,h4 {
     background-color: #333;
     display: grid;
     grid-template-rows: 1fr 2fr;
+    padding-top: 1rem;
+}
+
+.header span {
+    font-size: 1.75rem;
 }
 
 .header-top {
@@ -115,16 +121,18 @@ h1,h2,h3,h4 {
     display: flex;
     gap: 0.75rem;
     align-items: center;
-    flex: 13;
-    justify-content: flex-end;
 }
 
 .profile-section span {
     flex: 1;
 }
 
-.profile-section div {
+.profile-section img {
     flex: 1;
+}
+
+.profile-section h3 {
+    flex: 0;
 }
 
 .header-bottom {
@@ -150,24 +158,33 @@ h1,h2,h3,h4 {
 }
 
 .content-sidebar {
-    display: grid;
-    grid-template-rows: repeat(2, min(200px, 1fr));
     background-color: aliceblue;
-}
-
-.announcement-container {
     padding: 1rem;
 }
 
 .announcements {
     margin-top: 1rem;
     display: grid;
-    grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
-    padding: 1rem;
+    grid-template-rows: repeat(auto-fit, minmax(50px, 1fr));
+    justify-content: flex-start;
+    padding: 2rem;
     gap: 1rem;
     border-radius: 15px;
     background-color: #333;
     color: aliceblue;
+    
+}
+
+.announcements .announcement-item {
+    padding-bottom: 1rem;
+}
+
+
+.announcements .announcement-item h4 {
+    font-size: 0.8rem;
+}
+.announcement-item p {
+    font-size: 0.7rem;
 }
 
 .announcements > *:not(:last-child) {
@@ -175,14 +192,14 @@ h1,h2,h3,h4 {
 }
 
 .users-container {
-    padding: 1rem;
+    margin-top: 2rem;
 }
 
 .user-list {
     margin-top: 1rem;
     display: grid;
     grid-template-rows: repeat(auto-fill, minmax(50px, 1fr));
-    padding: 1rem;
+    padding: 2rem;
     gap: 1rem;
     border-radius: 15px;
     background-color: #333;
@@ -197,6 +214,15 @@ h1,h2,h3,h4 {
     display: flex;
     align-items: center;
     gap: 1rem;
+}
+
+.user-item p:first-child {
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.user-item p:last-child {
+    font-size: 0.8rem;
 }
 .content {
     display: grid;
