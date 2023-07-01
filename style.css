@@ -290,3 +290,55 @@ h1,h2,h3,h4 {
 .article-button-container span {
     font-size: 1.75rem !important;
 }
+
+@media screen and (max-width: 768px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .article-container {
+        grid-template-columns: 1fr;
+    }
+    .article-item {
+        grid-template-rows: 1fr;
+    }
+    .article-button-container {
+        justify-content: flex-start;
+    }
+    .article-button-container span {
+        font-size: 1.5rem !important;
+    }
+    .header-bottom {
+        display: grid;
+        grid-template:1fr 1fr / 1fr;
+
+    }
+    .header-bottom .greet {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .header-bottom .greet span {
+        font-size: 1.5rem;
+    }
+    .header-bottom .header-buttons {
+        justify-content: flex-start;
+    }
+    .header-bottom .header-buttons span {
+        font-size: 1.5rem;
+    }
+    .header-bottom .header-buttons button {
+        padding: 0.5rem 1rem;
+    }
+    .header-bottom .header-buttons button span {
+        font-size: 1.5rem;
+    }
+
+}
