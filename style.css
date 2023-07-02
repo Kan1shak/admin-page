@@ -275,6 +275,7 @@ color: var(--text-color-light);
     user-select: none;
     transition: background-color 0.2s ease-in-out;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .header-button:hover {
@@ -475,6 +476,7 @@ color: var(--text-color-light);
     height: 4px;
     width: 30px;
     border-radius: 2px;
+    transition: all 0.2s ease-in-out;
 }
 
 .hamburger::before {
@@ -487,6 +489,21 @@ color: var(--text-color-light);
     margin-top: 12px;
 }
 
+.hamburger:active{
+    background-color: var(--main-color);
+    rotate: 360deg;
+}
+
+
+.hamburger:active::before {
+    rotate: 45deg;
+    margin-top: 0px;
+}
+
+.hamburger:active::after {
+    rotate: -45deg;
+    margin-top: -4px;
+}
 
 .hamburger{
     display: none;
@@ -558,19 +575,14 @@ color: var(--text-color-light);
     }
 
     .profile-section {
-        display: inline;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
+        padding: 0.5rem 1.25rem;
+
     }
 
     .profile-section h3, .profile-section span {
         display: none;
     }
 
-    .profile-section img {
-        margin-left: 40px;
-    }
 
     .header-bottom .header-buttons {
         justify-content: center;
@@ -578,6 +590,7 @@ color: var(--text-color-light);
 
     .header-buttons > * {
         padding:1.0rem calc(4vw + 0.3rem);
+
     }
 
     .header-bottom .header-buttons span {
