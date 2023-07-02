@@ -196,9 +196,9 @@ color: var(--text-color-light);
 }
 
 .profile-section {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(50px, 1fr)) 40px;
     align-items: center;
-    justify-content: flex-end;
     user-select: none;
     border-radius: 50px;
     padding: 0.75rem;
@@ -207,35 +207,53 @@ color: var(--text-color-light);
     cursor: pointer;
     color: var(--text-color);
 }
-.profile-section:hover {
-    background-color: var(--main-hover);
+
+
+.profile-section div:first-child {
+    grid-column: 3/5;
 }
 
-.profile-section:active {
-    background-color: var(--main-active);
-}
-
-.profile-section>*{
-    text-align: right;
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
+.profile-section div:first-child span {
+    transition: background-color 0.1s ease-in-out;
+    margin-left: 2rem;
+    font-size: 2.5  rem !important;
 }
 
 .profile-section span {
-    flex: 1;
-    font-size: 2rem !important;
-}
-
-.profile-section img {
+    padding: 0.75rem;
     border-radius: 50px;
-    scale: 0.75;
-    flex: 1;
 }
 
-.profile-section h3 {
-    flex: 1;
+.profile-section span:hover {
+    background-color: var(--main-hover);
 }
+
+.profile-section span:active {
+    background-color: var(--main-active);
+}
+
+.profile-section div:last-child {
+    border-radius: 40px;
+    padding: 0.75rem;
+    grid-column: 5/8;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.profile-section div:last-child:hover {
+    background-color: var(--main-hover);
+}
+
+.profile-section div:last-child:active {
+    background-color: var(--main-active);
+}
+
+.profile-section div:last-child img {
+    margin-right: 0.5rem;
+}
+
 
 .header-bottom {
     display: flex;
@@ -489,18 +507,18 @@ color: var(--text-color-light);
     margin-top: 12px;
 }
 
-.hamburger:active{
+.hamburger.active{
     background-color: var(--main-color);
     rotate: 360deg;
 }
 
 
-.hamburger:active::before {
+.hamburger.active::before {
     rotate: 45deg;
     margin-top: 0px;
 }
 
-.hamburger:active::after {
+.hamburger.active::after {
     rotate: -45deg;
     margin-top: -4px;
 }
@@ -512,6 +530,7 @@ color: var(--text-color-light);
 
 
     .hamburger{
+        margin-left: calc(4vw + 0.3rem);
         display: block;
     }
 
@@ -554,6 +573,11 @@ color: var(--text-color-light);
         font-size: 1.5rem !important;
     }
 
+    .header {
+        padding-top: 0;
+        grid-template-rows: 1fr 1fr;
+    }
+
     .header-bottom {
         max-width: 100%;
         overflow: hidden;
@@ -576,6 +600,7 @@ color: var(--text-color-light);
 
     .profile-section {
         padding: 0.5rem 1.25rem;
+        display: block;
 
     }
 
@@ -583,6 +608,9 @@ color: var(--text-color-light);
         display: none;
     }
 
+    .profile-section div:last-child img {
+        margin-right: 0;
+    }
 
     .header-bottom .header-buttons {
         justify-content: center;

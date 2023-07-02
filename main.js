@@ -5,6 +5,7 @@ const newSideBar = sideBar.cloneNode(true);
 newSideBar.classList.add('new-sidebar');
 newSideBar.classList.remove('sidebar');
 hamburgerButton.addEventListener('click', () => {
+    hamburgerButton.classList.toggle('active');
     header.after(newSideBar);
     if (newSideBar.style.display === 'grid') {
         newSideBar.style.display = 'none';
