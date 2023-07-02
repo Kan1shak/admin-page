@@ -541,8 +541,9 @@ color: var(--text-color-light);
         max-width: 100%;
         overflow: hidden;
         display: grid;
-        grid-template:1fr 1fr / 1fr;
-        padding: 1rem 1.5rem;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        padding: 1rem calc(2vw);
 
     }
     .header-bottom .greet {
@@ -572,8 +573,13 @@ color: var(--text-color-light);
     }
 
     .header-bottom .header-buttons {
-        justify-content: flex-start;
+        justify-content: center;
     }
+
+    .header-buttons > * {
+        padding:1.0rem calc(4vw + 0.3rem);
+    }
+
     .header-bottom .header-buttons span {
         font-size: 1.5rem;
     }
